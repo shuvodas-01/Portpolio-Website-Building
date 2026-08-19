@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Shuvo Das - Data Analyst and Data Entry Specialist Portfolio">
+<title>Shuvo Das | Data Analyst Portfolio</title>
+<style>
+:root{
+  --bg:#f7f9fc;--surface:#fff;--text:#172033;--muted:#657089;--primary:#2563eb;
+  --primary2:#7c3aed;--border:#e5eaf2;--shadow:0 15px 40px rgba(23,32,51,.09);
+}
+body.dark{--bg:#0b1120;--surface:#111a2e;--text:#eef4ff;--muted:#aab5ca;--border:#25314a;--shadow:0 15px 40px rgba(0,0,0,.25)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;transition:.25s}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:1.25rem;font-weight:800}.logo span{color:var(--primary)}
+nav{display:flex;gap:22px;align-items:center}
+nav a{font-weight:600;color:var(--muted);font-size:.95rem}
+nav a:hover{color:var(--primary)}
+.menu{display:none;border:0;background:none;color:var(--text);font-size:1.5rem}
+.theme{border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:10px;padding:8px 11px;cursor:pointer}
+.hero{padding:105px 0 80px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:50px;align-items:center}
+.badge{display:inline-block;padding:7px 12px;border-radius:99px;background:#dbeafe;color:#1d4ed8;font-weight:700;font-size:.85rem;margin-bottom:16px}
+body.dark .badge{background:#172554;color:#93c5fd}
+h1{font-size:clamp(2.6rem,6vw,4.7rem);line-height:1.05;letter-spacing:-2px}
+.gradient{background:linear-gradient(90deg,var(--primary),var(--primary2));color:transparent;background-clip:text}
+.hero p{font-size:1.15rem;color:var(--muted);max-width:680px;margin:22px 0}
+.buttons{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 18px;border-radius:10px;background:var(--primary);color:white;font-weight:700;border:1px solid var(--primary);cursor:pointer}
+.btn.alt{background:var(--surface);color:var(--text);border-color:var(--border)}
+.btn:hover{transform:translateY(-2px)}
+.hero-card{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:28px;box-shadow:var(--shadow);animation:float 5s ease-in-out infinite}
+.avatar{width:100px;height:100px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--primary),var(--primary2));color:white;font-size:2rem;font-weight:800;margin-bottom:18px}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.stat{padding:14px;border:1px solid var(--border);border-radius:12px}.stat b{display:block;font-size:1.3rem}.stat span{color:var(--muted);font-size:.82rem}
+section{padding:80px 0}.section-head{margin-bottom:35px}.eyebrow{color:var(--primary);font-weight:800;text-transform:uppercase;letter-spacing:1.5px;font-size:.8rem}.section-head h2{font-size:2.2rem;margin:6px 0}.section-head p{color:var(--muted)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:26px;box-shadow:var(--shadow)}
+.skills{display:flex;flex-wrap:wrap;gap:10px}.skill{padding:9px 13px;background:var(--bg);border:1px solid var(--border);border-radius:9px;font-weight:600}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.project{background:var(--surface);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transition:.25s}
+.project:hover{transform:translateY(-5px)}
+.project-img{height:170px;background:linear-gradient(135deg,#dbeafe,#ede9fe);display:grid;place-items:center;font-size:3rem}
+body.dark .project-img{background:linear-gradient(135deg,#172554,#2e1065)}
+.project-body{padding:22px}.project-body h3{margin-bottom:7px}.project-body p{color:var(--muted);font-size:.94rem}.tags{display:flex;flex-wrap:wrap;gap:7px;margin:15px 0}.tag{font-size:.75rem;padding:4px 8px;border-radius:6px;background:var(--bg);border:1px solid var(--border)}
+.project-links{display:flex;gap:10px}.small{padding:8px 12px;font-size:.82rem}
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.service h3{margin:10px 0 5px}.service p{color:var(--muted);font-size:.9rem}
+.timeline{border-left:2px solid var(--border);padding-left:24px}.timeline-item{margin-bottom:25px;position:relative}.timeline-item:before{content:"";position:absolute;left:-31px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--primary)}
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:25px}
+form{display:grid;gap:12px}input,textarea{width:100%;padding:13px 14px;border:1px solid var(--border);background:var(--bg);color:var(--text);border-radius:10px;font:inherit}textarea{min-height:140px;resize:vertical}
+footer{padding:35px 0;border-top:1px solid var(--border);color:var(--muted);text-align:center}
+.socials{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.social{padding:9px 13px;border:1px solid var(--border);border-radius:9px}
+.reveal{opacity:0;transform:translateY(20px);transition:.7s}.reveal.show{opacity:1;transform:none}
+@keyframes float{50%{transform:translateY(-8px)}}
+@media(max-width:800px){
+ nav{display:none;position:absolute;top:72px;left:0;right:0;background:var(--surface);padding:20px;flex-direction:column;border-bottom:1px solid var(--border)}
+ nav.open{display:flex}.menu{display:block}
+ .hero-grid,.about,.contact{grid-template-columns:1fr}.projects{grid-template-columns:1fr}.services{grid-template-columns:1fr 1fr}
+}
+@media(max-width:500px){.services{grid-template-columns:1fr}.hero{padding-top:70px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#home">Shuvo<span>.</span></a>
+    <button class="menu" id="menu" aria-label="Open menu">☰</button>
+    <nav id="nav">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a>
+      <a href="#services">Services</a><a href="#contact">Contact</a>
+      <button class="theme" id="theme" title="Toggle dark mode">🌙</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div class="container hero-grid">
+  <div class="reveal">
+   <span class="badge">Available for Data &amp; Entry Projects</span>
+   <h1>Hi, I'm <span class="gradient">Shuvo Das.</span></h1>
+   <h2>Data Analyst &amp; Data Entry Specialist</h2>
+   <p>I organize, clean and analyze data to turn raw information into clear business insights. My current toolkit includes Excel, Power Query, SQL and Power BI, with Python and machine learning as my next growth areas.</p>
+   <div class="buttons"><a class="btn" href="#projects">View My Projects</a><a class="btn alt" href="#contact">Contact Me</a></div>
+  </div>
+  <div class="hero-card reveal">
+   <div class="avatar">SD</div>
+   <h3>My focus</h3>
+   <p style="color:var(--muted)">Accurate data entry today. Professional data analysis tomorrow.</p>
+   <div class="stat-grid">
+    <div class="stat"><b>Excel</b><span>Cleaning &amp; analysis</span></div>
+    <div class="stat"><b>SQL</b><span>Data querying</span></div>
+    <div class="stat"><b>Power BI</b><span>Dashboards</span></div>
+    <div class="stat"><b>Python</b><span>Learning</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="about">
+ <div class="container">
+  <div class="section-head reveal"><span class="eyebrow">About</span><h2>Turning data into useful decisions.</h2><p>A simple, professional introduction for clients and employers.</p></div>
+  <div class="about">
+   <div class="card reveal">
+    <p>I am an aspiring Data Analyst and Data Entry Specialist from Bangladesh, currently building practical skills in spreadsheet management, data cleaning, SQL and business intelligence.</p><br>
+    <p>I am interested in real-world analytics projects where accurate data preparation, clear reporting and useful insights matter. I am also continuing my journey toward Python, machine learning and AI.</p>
+   </div>
+   <div class="card reveal">
+    <h3>What I bring</h3><br>
+    <p>✓ Attention to data accuracy</p><p>✓ Organized spreadsheet work</p><p>✓ Analytical thinking</p><p>✓ Clear dashboards and reports</p><p>✓ Continuous technical learning</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="skills">
+ <div class="container">
+  <div class="section-head reveal"><span class="eyebrow">Skills</span><h2>My toolkit</h2></div>
+  <div class="card reveal">
+   <div class="skills">
+    <span class="skill">Microsoft Excel</span><span class="skill">Power Query</span><span class="skill">Pivot Tables</span>
+    <span class="skill">Data Cleaning</span><span class="skill">Data Entry</span><span class="skill">SQL</span>
+    <span class="skill">Power BI</span><span class="skill">Data Visualization</span><span class="skill">Python — Learning</span>
+    <span class="skill">Machine Learning — Learning</span>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="projects">
+ <div class="container">
+  <div class="section-head reveal"><span class="eyebrow">Portfolio</span><h2>Featured projects</h2><p>Replace the demo links with your real project files as you complete them.</p></div>
+  <div class="projects">
+   <article class="project reveal"><div class="project-img">📋</div><div class="project-body"><h3>Customer Data Cleaning</h3><p>Cleaning and organizing a messy customer dataset for reliable reporting.</p><div class="tags"><span class="tag">Excel</span><span class="tag">Power Query</span><span class="tag">Data Entry</span></div><div class="project-links"><a class="btn small" href="#" onclick="demo(event,'Customer Data Cleaning')">View Project</a></div></div></article>
+   <article class="project reveal"><div class="project-img">📊</div><div class="project-body"><h3>Sales Performance Analysis</h3><p>Analyzing sales, products, regions and monthly performance using Excel.</p><div class="tags"><span class="tag">Excel</span><span class="tag">Pivot Tables</span><span class="tag">KPIs</span></div><div class="project-links"><a class="btn small" href="#" onclick="demo(event,'Sales Performance Analysis')">View Project</a></div></div></article>
+   <article class="project reveal"><div class="project-img">📈</div><div class="project-body"><h3>Interactive Power BI Dashboard</h3><p>A business dashboard designed to communicate sales performance and trends.</p><div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Visualization</span></div><div class="project-links"><a class="btn small" href="#" onclick="demo(event,'Power BI Dashboard')">View Project</a></div></div></article>
+   <article class="project reveal"><div class="project-img">🗄️</div><div class="project-body"><h3>E-commerce SQL Analysis</h3><p>Business-focused SQL analysis using joins, aggregations and advanced queries.</p><div class="tags"><span class="tag">SQL</span><span class="tag">JOIN</span><span class="tag">CTE</span></div><div class="project-links"><a class="btn small" href="#" onclick="demo(event,'E-commerce SQL Analysis')">View Project</a></div></div></article>
+  </div>
+ </div>
+</section>
+
+<section id="services">
+ <div class="container">
+  <div class="section-head reveal"><span class="eyebrow">Services</span><h2>How I can help</h2></div>
+  <div class="services">
+   <div class="card service reveal"><div>📝</div><h3>Data Entry</h3><p>Accurate data entry, organization and spreadsheet management.</p></div>
+   <div class="card service reveal"><div>🧹</div><h3>Data Cleaning</h3><p>Duplicates, missing values, formatting and structured datasets.</p></div>
+   <div class="card service reveal"><div>📊</div><h3>Data Analysis</h3><p>Excel and SQL analysis with practical business insights.</p></div>
+   <div class="card service reveal"><div>📈</div><h3>Power BI</h3><p>Clear interactive dashboards for business reporting.</p></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="container">
+  <div class="section-head reveal"><span class="eyebrow">Journey</span><h2>Learning &amp; career direction</h2></div>
+  <div class="card timeline reveal">
+   <div class="timeline-item"><h3>Data Entry Specialist</h3><p style="color:var(--muted)">Building professional experience with accurate, organized data work.</p></div>
+   <div class="timeline-item"><h3>Data Analytics</h3><p style="color:var(--muted)">Developing Excel, Power Query, SQL and Power BI skills through practical projects.</p></div>
+   <div class="timeline-item"><h3>Machine Learning &amp; AI</h3><p style="color:var(--muted)">Long-term direction toward machine learning, AI systems and data-driven products.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="container">
+  <div class="section-head reveal"><span class="eyebrow">Contact</span><h2>Let's work together.</h2><p>Replace the placeholder links below with your real accounts.</p></div>
+  <div class="contact">
+   <div class="card reveal">
+    <h3>Find me online</h3>
+    <div class="socials">
+      <a class="social" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+      <a class="social" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="social" href="https://www.upwork.com/" target="_blank" rel="noopener">Upwork</a>
+    </div>
+    <p style="margin-top:20px;color:var(--muted)">Email: <span id="emailText">your-email@example.com</span></p>
+   </div>
+   <div class="card reveal">
+    <form id="contactForm">
+      <input id="name" type="text" placeholder="Your name" required>
+      <input id="email" type="email" placeholder="Your email" required>
+      <textarea id="message" placeholder="Tell me about your project..." required></textarea>
+      <button class="btn" type="submit">Send Message</button>
+    </form>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer><div class="container"><p>© <span id="year"></span> Shuvo Das. Built with HTML, CSS &amp; JavaScript.</p></div></footer>
+
+<script>
+const body=document.body;
+const theme=document.getElementById('theme');
+const saved=localStorage.getItem('theme');
+if(saved==='dark'){body.classList.add('dark');theme.textContent='☀️'}
+theme.addEventListener('click',()=>{
+ body.classList.toggle('dark');
+ const dark=body.classList.contains('dark');
+ localStorage.setItem('theme',dark?'dark':'light');
+ theme.textContent=dark?'☀️':'🌙';
+});
+const menu=document.getElementById('menu'), nav=document.getElementById('nav');
+menu.addEventListener('click',()=>nav.classList.toggle('open'));
+document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+document.getElementById('year').textContent=new Date().getFullYear();
+
+function demo(e,name){
+ e.preventDefault();
+ alert(name+"\\n\\nThis project page is ready to be connected to your real project. We'll add the dataset, screenshots, analysis and results after you complete the project.");
+}
+
+document.getElementById('contactForm').addEventListener('submit',function(e){
+ e.preventDefault();
+ const name=document.getElementById('name').value.trim();
+ const email=document.getElementById('email').value.trim();
+ const message=document.getElementById('message').value.trim();
+ const subject=encodeURIComponent('Portfolio inquiry from '+name);
+ const body=encodeURIComponent('Name: '+name+'\\nEmail: '+email+'\\n\\n'+message);
+ window.location.href='mailto:your-email@example.com?subject='+subject+'&body='+body;
+});
+</script>
+</body>
+</html>
